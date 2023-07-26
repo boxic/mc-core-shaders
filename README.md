@@ -2,7 +2,7 @@
 
 This is a collection of some shader utilities/projects, mostly for personal use, though feel free to use them for your own purposes if you want to. 
 No guarantees that any of this is the best solution for anything.
-If you want to use any of the things listed on here, but are not sure how to use them / edit them for what you need, let me know on discord (Ts#0001) or create an issue on this repo.
+If you want to use any of the things listed on here, but are not sure how to use them / edit them for what you need, let me know on discord (@mctsts), on the [crowdford server](https://discord.gg/qZ3SCcc) or create an issue on this repo.
 
 # Modules
 A list of all utilities/shaders/things included in this repo. I started listing versions on newer ones, but they may still work in newer or older version, it's simply the most recent release I've tested it in.
@@ -19,6 +19,7 @@ A list of all utilities/shaders/things included in this repo. I started listing 
 - [Custom Particles](#custom-particles)
 - [Wavy Water](#wavy-water)
 - [Remove Nameboxes](#remove-name-boxes)
+- [Move Enchanting Table GUI book](#move-enchanting-table-gui-book)
 - [Move Inventory Player](#move-inventory-player)
 - [Move XP Number](#move-xp-number)
 - [GUI Scale](#gui-scale)
@@ -38,6 +39,7 @@ Includes code/ideas from Suso and dragonmaster95.
 [Back](#modules)
 
 ## Move Hearts
+[1.19.4]
 
 A shader to move the hearts (or other gui elements), made for VALENTINX110.  
 A problem here is that you cant directly access the texture using the vertex UV coordinates as they might be barely in another pixel. This can be resolved by offsetting the position by half a pixel depending on the gl_VertexID.
@@ -105,10 +107,21 @@ This is a very very simple shader, that removes the boxes around names without h
 
 [Back](#modules)
 
-## Move Inventory Player
-[1.18.2]
+## Move Enchanting Table GUI Book
+[1.17.1 - 1.19.4]
 
-This is a bunch of shaders that can move the player that's displayed inside the inventory. It allows you to define an offset in `includes\util.glsl`, line 26 that offsets the player and everything attached to it. This works with all GUI scales.   
+Simple shader that allows to move the book in enchanting table gui. Define an offset in `core/rendertype_entity_solid.vsh`, line 35.
+
+Example:
+
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/92710569/245508578-ec899466-9ce6-4e3e-b008-e3ef5ddd1adc.png" width=300>
+
+[Back](#modules)
+
+## Move Inventory Player
+[1.18.2 - 1.19.4]
+
+This is a bunch of shaders that can move the player that's displayed inside the inventory. It allows you to define an offset in `include\util.glsl`, line 26 that offsets the player and everything attached to it. This works with all GUI scales.
 
 Example:  
 <img src="https://user-images.githubusercontent.com/24660095/151046774-9eb092dd-2e09-4c7e-a038-ef4bd7da7d98.png" width=300>
@@ -133,7 +146,7 @@ A utility function that helps with dealing with GUI scales.
 [Back](#modules)
 
 ## Hardcore Hearts 
-[1.18.2]
+[1.18.2 - 1.20]
 
 Replaces hearts with heardcore hearts, without affecting the `icons.png` texture. Also does it in tab. Also works for the heart variants like wither, frozen, absorption, etc.
 
